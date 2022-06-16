@@ -15,11 +15,6 @@ public:
 }                  
         
          int rob(vector<int>& nums) {
-        int n = nums.size();
-            vector<int> first;
-            for(int i = 0; i < n; i++){
-                   first.push_back(nums[i]);
-            }
-            return solve(first);
+            return solve(nums);
     }
 };
