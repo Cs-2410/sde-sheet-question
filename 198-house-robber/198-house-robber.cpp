@@ -16,11 +16,10 @@ public:
         
          int rob(vector<int>& nums) {
         int n = nums.size();
-            vector<int> first , last;
+            vector<int> first;
             for(int i = 0; i < n; i++){
                    first.push_back(nums[i]);
-                 last.push_back(nums[i]);
             }
-            return max(solve(first) , solve(last));
+            return solve(first);
     }
 };
