@@ -19,8 +19,7 @@ private:
                              for(char val = '1'; val <= '9'; val++){
                                            if(ok(i , j , board , val)){
                                                  board[i][j] = val;
-                                                 bool solpos = solve(board);
-                                                 if(solpos)
+                                                 if(solve(board))
                                                          return true;
                                                    else
                                                          board[i][j] = '.';
