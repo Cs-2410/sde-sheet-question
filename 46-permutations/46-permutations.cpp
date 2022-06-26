@@ -15,8 +15,8 @@ private:
 public:
     vector<vector<int>> permute(vector<int>& nums) {
         vector<vector<int>> ans;
-            int index = 0;
-         solve(nums , index , ans);
+         
+         solve(nums , 0 , ans);
             return ans;
             
     }
