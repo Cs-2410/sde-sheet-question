@@ -38,14 +38,13 @@ private:
                 ans += solve(amount - coins[index] , coins,index , mp);
                 ans += solve(amount, coins , index+1 , mp);
                 mp[make_pair(amount,index)] = ans;
-                
                 return ans;
         }
 public:
     int change(int amount, vector<int>& coins) {
          map<pair<int,int> , int> mp;
          sort(coins.begin(),coins.end());
-         reverse(coins.begin(),coins.end());
+         // reverse(coins.begin(),coins.end());
          int ways = solve(amount , coins, 0 , mp);
          return ways;
     }
