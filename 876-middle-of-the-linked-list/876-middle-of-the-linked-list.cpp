@@ -8,24 +8,35 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+// class Solution {
+// public:
+//     ListNode* middleNode(ListNode* head) {
+//         if(head == NULL)
+//                 return 0;
+//             int count = 1;
+//         struct ListNode *temp =head;
+//         while(temp->next != NULL){
+//             count++;
+//             temp = temp->next;
+//         }
+//         count = count/2 + 1;
+//             int mid = 1;
+//              temp =head;
+//             while(mid < count){
+//                    temp = temp->next;
+//                     mid++;
+//             }
+//             return temp;
+//     }
+// };
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
-        if(head == NULL)
-                return 0;
-            int count = 1;
-        struct ListNode *temp =head;
-        while(temp->next != NULL){
-            count++;
-            temp = temp->next;
+        ListNode *fast=head, *slow=head;
+        while(fast!=NULL && fast->next!=NULL){
+                fast=fast->next->next;
+                slow=slow->next;
         }
-        count = count/2 + 1;
-            int mid = 1;
-             temp =head;
-            while(mid < count){
-                   temp = temp->next;
-                    mid++;
-            }
-            return temp;
+        return slow;
     }
 };
