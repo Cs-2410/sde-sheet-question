@@ -21,11 +21,11 @@ public:
         }
         count = count/2 + 1;
             int mid = 1;
-            struct ListNode *ptr =head;
+             temp =head;
             while(mid < count){
-                    ptr = ptr->next;
+                   temp = temp->next;
                     mid++;
             }
-            return ptr;
+            return temp;
     }
 };
