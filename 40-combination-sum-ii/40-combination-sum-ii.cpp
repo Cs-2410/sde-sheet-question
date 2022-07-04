@@ -7,12 +7,13 @@ public:
            if(sum > target)
                    return ;
                 
-              if(sum == target)
-              {  if(mp.find(level) == mp.end()){
-                      ans.push_back(level);
-                    mp[level] = 1;
-              }
-               
+              if(sum == target){
+              // {  if(mp.find(level) == mp.end()){
+              //         ans.push_back(level);
+              //       mp[level] = 1;
+                      
+              // }
+               ans.push_back(level);
                 return ;
               }
               for(int i=index; i<candidates.size();i++){
