@@ -18,7 +18,7 @@ public:
                             flag=0;
                             curr_gas+=gas[iter];
                             if(cost[iter]>curr_gas){
-                                    start=(iter+1)%n;
+                                    start=iter+1;
                                     break;
                             }
                             curr_gas-=cost[iter];
