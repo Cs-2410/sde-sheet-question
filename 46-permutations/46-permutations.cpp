@@ -10,7 +10,7 @@ private:
                 for(int i = index; i < nums.size(); i++){
                         swap(nums[index] , nums[i]);
                         solve(nums , index + 1);
-                        swap(nums[index] , nums[i]);
+                        
                 }
         }
 public:
