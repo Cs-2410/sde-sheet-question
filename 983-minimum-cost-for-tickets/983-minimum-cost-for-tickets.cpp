@@ -1,7 +1,7 @@
 class Solution {
 public:vector<int> dp;
         int func(vector<int>& days, vector<int>& costs,int index){
-                if(index >=days.size())
+                if(index >= days.size())
                         return 0;
                 if(dp[index] != -1)
                         return dp[index];
@@ -17,7 +17,6 @@ public:vector<int> dp;
                         cost = func(days,costs,j)+costs[i];
                         ans = min(cost , ans);         
                 }
-                // cout<<index<<"  "<<ans<<endl;
               dp[index] = ans;
                 return ans;
         }
