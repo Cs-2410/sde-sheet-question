@@ -8,6 +8,6 @@ public:
                 c=max(c,b-prices[i]);
                 d=max(d,c+prices[i]);
         }
-        return max(b,d);
+        return max(b,max(0,d));
     }
 };
