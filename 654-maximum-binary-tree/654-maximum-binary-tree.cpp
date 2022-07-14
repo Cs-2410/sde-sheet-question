@@ -30,7 +30,6 @@ public:
                 return node;
         }
     TreeNode* constructMaximumBinaryTree(vector<int>& nums) {
-        TreeNode* root = new TreeNode;
             int n = nums.size();
             return solve(nums , 0 , n-1);
     }
