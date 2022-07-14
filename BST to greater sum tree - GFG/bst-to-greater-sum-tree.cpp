@@ -99,13 +99,11 @@ class Solution
     public:
     //dir -1 is left child +1 is right child
     int func(struct Node *root,int parentSum){
-        if(!root){
+        if(!root)
             return parentSum;
-        }
         int right=func(root->right,parentSum);
-        int temp=root->data;
+        int left=func(root->left,root->data+right);
         root->data=right;
-        int left=func(root->left,root->data+temp);
         return left;
     }
     void transformTree(struct Node *root)
