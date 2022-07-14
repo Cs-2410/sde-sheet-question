@@ -13,9 +13,9 @@ class Solution {
 public:
         TreeNode* solve(vector<int>& preorder, vector<int>& inorder, int& rootinx, int left, int right) {
         if (left > right) return NULL;
-        int pivot = left;  // find the root from inorder
+        int pivot = left; 
         while(inorder[pivot] != preorder[rootinx]) pivot++;
-        // int pivot = mp[preorder[rootinx]];
+        
         rootinx++;
         TreeNode* newNode = new TreeNode(inorder[pivot]);
         newNode->left = solve(preorder, inorder, rootinx, left, pivot-1);
