@@ -11,28 +11,28 @@
  */
 class Solution {
 public:
-        TreeNode* solve(vector<int>& nums , int l , int h){
-        if(l > h)
-                return NULL;
-                if(l == h)
-                 return new TreeNode(nums[l]);
+    TreeNode* solve(TreeNode* node,vector<int>& nums, int l,int h){
+            if(l>h) return NULL;
+            if(l==h){
+               TreeNode* root = new TreeNode();
+               root->val = nums[l];
+               return root;
+            }
+          int mid = l + (h-l)/2 ;
+          TreeNode* root = new TreeNode();
+            root->val = nums[mid];
+            root->left = solve(node,nums,l,mid-1);
+            root->right = solve(node,nums,mid+1,h);
+            return root;
+    }   
+      
+    TreeNode* sortedArrayToBST(vector<int>& nums) {
+        int l = 0, h = nums.size()-1;
+            int mid = l + (h-l)/2 ;
             TreeNode* node = new TreeNode();
-            int mid = l +((h-l)/2);
             node->val = nums[mid];
-            node->left = solve(nums , l , mid-1);
-            node->right = solve(nums , mid+1 , h);
-            return node;
-        }           
-        TreeNode* sortedArrayToBST(vector<int>& nums) {
-        if(nums.size() == 1)
-                 return new TreeNode(nums[0]);
-            TreeNode* node = new TreeNode();
-            int l =0;
-            int h =nums.size()-1;
-            int mid = l +((h-l)/2);
-            node->val = nums[mid];
-            node->left = solve(nums , l , mid-1);
-            node->right = solve(nums , mid+1 , h);
+            node->left = solve(node,nums,l,mid-1);
+            node->right = solve(node,nums,mid+1,h);
             return node;
     }
 };
